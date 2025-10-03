@@ -47,3 +47,11 @@ Accepts username, email and password. Email must be unique. Cannot be accessed v
 **`{{api_url}}/login`**:
 
 Accepts email and password to login.
+
+## Superuser
+
+Log in with:
+
+Username: `kushalghimire`
+
+Pasword: `123456`

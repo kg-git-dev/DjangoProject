@@ -36,6 +36,14 @@ Available end points can be viewed via postman. Import `Django Project.postman_c
 
 * **Loginify Home:**
     * **Method:** `GET`
-    * **Endpoint:** `{{api_url}}/login/`
+    * **Endpoint:** `{{api_url}}/login/home`
     * **Description:** A simple test endpoint that returns a welcome message.
 
+## Available routes
+**`{{api_url}}/signup`**:
+
+Accepts username, email and password. Email must be unique. Cannot be accessed via postman due to CSRF block.
+
+**`{{api_url}}/login`**:
+
+Accepts email and password to login.

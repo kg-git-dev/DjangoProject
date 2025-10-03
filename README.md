@@ -19,5 +19,23 @@ source DjangoAssignment/bin/activate
 Install requirements:
 
 ```bash
-pip install -r requirements.tx
+pip install -r requirements.txt
 ```
+
+## Run
+Navigate to LoginSystem directory : `cd LoginSystem`
+
+Start server:
+```bash
+python manage.py runserver
+```
+
+## Available end points
+
+Available end points can be viewed via postman. Import `Django Project.postman_collection.json` file located inside Postman directory. Set enviornment variable `api_url` to local url; defaults to `http://localhost:8000`
+
+* **Loginify Home:**
+    * **Method:** `GET`
+    * **Endpoint:** `{{api_url}}/login/`
+    * **Description:** A simple test endpoint that returns a welcome message.
+

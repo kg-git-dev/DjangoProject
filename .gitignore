@@ -2,5 +2,6 @@
 DjangoAssignment/
 
 # igore cached python bytecode
-LoginSystem/LoginSystem/__pycache__/
+__pycache__/
+
 

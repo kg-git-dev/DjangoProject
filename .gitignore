@@ -1,0 +1,6 @@
+# ignore virtual environment folder
+DjangoAssignment/
+
+# igore cached python bytecode
+LoginSystem/LoginSystem/__pycache__/
+

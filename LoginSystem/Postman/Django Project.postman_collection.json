@@ -25,12 +25,205 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Login as Superuser to get auth token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"kushalghimire\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/token/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/api/users/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"content-length": true,
+					"host": true,
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{auth_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"kushal2\",\n    \"email\": \"kushal2@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/users/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific user by email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/api/users/kushal1@gmail.com/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"kushal1@gmail.com",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user by email",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{auth_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"updateduser\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/users/kushal2@gmail.com/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"kushal2@gmail.com",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user by email",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/api/users/kushal2@gmail.com/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"kushal2@gmail.com",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
 			"key": "api_url",
 			"value": "http://localhost:8000/",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "06dc9e9627d1567d33adee62ee987a6af0fec4c1",
 			"type": "string"
 		}
 	]

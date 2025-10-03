@@ -22,4 +22,8 @@ urlpatterns = [
 
     # Include routes for Loginify app
     path('login/', include('Loginify.urls')),
+
+    # Include routes for the api
+    path('api/', include('api.urls')),      
+
 ]
